@@ -1,14 +1,10 @@
-import './App.scss';
-import data from './data/video-details.json'
+import "./App.scss";
+import Header from "./components/Header/Header.js";
 
 function App() {
-
-  console.log(data);
   return (
     <div className="App">
-      <header className="App-header">
-       
-      </header>
+      <Header />
     </div>
   );
 }

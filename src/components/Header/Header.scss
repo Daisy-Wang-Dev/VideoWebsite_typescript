@@ -1,6 +1,64 @@
-.header{
-    &__logo-img{
-        max-width: 120px;
-    
+@use "../../styles/partials/resets";
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts";
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem 1.6rem 2.4rem;
+
+  &__logo-img {
+    max-width: 120px;
+  }
+  &__logo {
+    margin: auto;
+    padding-bottom: 1.6rem;
+  }
+  &__search {
+    border: 1px solid $Mercury;
+    border-radius: 4px;
+    padding: 1.2rem 1.2rem 1.2rem 3.2rem;
+    width: 80%;
+    &::placeholder {
+      font-family: "Avenir Next";
+      font-weight: 400;
+      font-style: normal;
+      font-size: 1.2rem;
+      line-height: 2rem;
+      color: $BrainFlix-Black;
+      
     }
+  }
+  &__search-logo{
+    position:absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  &__avatar {
+    max-width: 4rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    &--bigger-screen {
+      display: none;
+    }
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.6rem;
+    position: relative;
+  }
+  &__btn {
+    border-radius: 4px;
+    border: none;
+    background-color: $BrainFlix-Blue;
+    background-image: url("../../assets/icons/upload.svg");
+    background-position: left;
+    background-repeat: no-repeat;
+    color: $White;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.6rem;
+  }
 }

@@ -1,12 +1,12 @@
 import "./VideoPlayer.scss";
-import Videos from "../../data/videos.json";
 
-function VideoPlayer() {
-  const displayVideo = Videos[0].image;
+function VideoPlayer({Videos,activeVideoID}) {
+
+  const displayedVideo = Videos.find(Video => Video.id === activeVideoID).image;
 
   return (
     <section className="videoPlayer">
-      <video className="videoPlayer__preview" controls poster={displayVideo}></video>
+      <video className="videoPlayer__preview" controls poster={displayedVideo}></video>
     </section>
   );
 }

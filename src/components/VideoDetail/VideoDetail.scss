@@ -2,3 +2,24 @@
 @use "../../styles/partials/fonts";
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+
+.video-details {
+    padding: 0 1.6rem 2.4rem;
+    &__metadata-container{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__metadata-interact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__views {
+        display: flex;
+    }
+    &__likes {
+        display: flex;
+    }
+
+}

@@ -8,7 +8,8 @@ function VideoDetail({ activeVideoID }) {
     (VideoDetail) => VideoDetail.id === activeVideoID
   );
 
-  const { title, channel, timestamp, views, likes } = activeVideoDetails;
+  const { title, channel, description, timestamp, views, likes } =
+    activeVideoDetails;
 
   const date = new Date(timestamp);
   const month = date.toLocaleString("default", { month: "2-digit" });
@@ -16,8 +17,6 @@ function VideoDetail({ activeVideoID }) {
   const year = date.getFullYear();
 
   const readDate = `${day}/${month}/${year}`;
-
-  //   dateEl.innerText = `${dayOfWeek} ${month} ${day} ${year}`;
 
   return (
     <section className="video-details">
@@ -47,6 +46,7 @@ function VideoDetail({ activeVideoID }) {
           </div>
         </div>
       </div>
+      <div className="video-details__description">{description}</div>
     </section>
   );
 }

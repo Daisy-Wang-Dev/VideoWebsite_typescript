@@ -1,0 +1,13 @@
+@use "../../styles/partials/resets";
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.active-comment {
+  &__img {
+    width: 3.6rem;
+    height: 3rem;
+    border-radius: 50%;
+    color: $Mercury;
+  }
+}

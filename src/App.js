@@ -19,8 +19,9 @@ function App() {
       <VideoPlayer Videos={Videos} activeVideoID={activeVideoID}/>
      {/* /* todo: Add components */}
       <main>
+          <div className="video-details-container">
           <VideoDetail activeVideoID={activeVideoID}/>
-        
+          </div>
         {/* <SideBar /> */}
        </main> 
     </div>

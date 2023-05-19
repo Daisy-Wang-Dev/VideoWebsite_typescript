@@ -1,10 +1,14 @@
 import "./Comments.scss";
 import Comment from "../Comment/Comment";
+import CommentForm from "../CommentForm/CommentForm";
+
 
 function Comments({ activeComments }) {
   return (
     <section className="comments">
+        
         <h2 className="comments__title">{activeComments.length} Comments</h2>
+        <CommentForm/>
       {activeComments.map((activeComment) => {
         const date = new Date(activeComment.timestamp);
         const month = date.toLocaleString("default", { month: "2-digit" });

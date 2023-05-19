@@ -50,7 +50,6 @@ function VideoDetail({ activeVideoID }) {
         </div>
         <div className="video-details__description">{description}</div>
       </section>
-      {/* <CommentForm/> */}
       <section className="active-comments">
         <Comments activeComments={comments} />
       </section>

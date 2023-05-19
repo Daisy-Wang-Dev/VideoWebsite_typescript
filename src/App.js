@@ -3,6 +3,7 @@ import Videos from "./data/videos.json"
 import Header from "./components/Header/Header.js";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import VideoDetail from "./components/VideoDetail/VideoDetail";
+import SideBar from "./components/SideBar/SideBar";
 import { useState } from "react";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
           <div className="video-details-container">
           <VideoDetail activeVideoID={activeVideoID}/>
           </div>
-        {/* <SideBar /> */}
+        <SideBar Videos={Videos} activeVideoID={activeVideoID}/>
        </main> 
     </div>
   );

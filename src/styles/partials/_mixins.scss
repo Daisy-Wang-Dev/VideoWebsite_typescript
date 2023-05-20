@@ -11,3 +11,10 @@
     @content;
   }
 }
+
+
+// For left and right spacing 
+@mixin padding-tablet {
+  padding: 1.6rem 3.2rem;
+}
+

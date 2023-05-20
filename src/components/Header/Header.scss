@@ -1,11 +1,16 @@
-@use "../../styles/partials/resets";
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/fonts";
+@use "../../styles/partials/mixins" as *;
 
 .header {
   display: flex;
   flex-direction: column;
   padding: 1.6rem;
+  @include media-tablet {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   &__logo-img {
     max-width: 120px;
@@ -13,6 +18,9 @@
   &__logo {
     margin: auto;
     padding-bottom: 1.6rem;
+    @include media-tablet {
+      margin: 0;
+    }
   }
   &__search {
     border: 1px solid $Mercury;
@@ -26,28 +34,40 @@
       font-size: 1.2rem;
       line-height: 2rem;
       color: $BrainFlix-Black;
-      
     }
   }
-  &__search-logo{
-    position:absolute;
+  &__search-logo {
+    position: absolute;
     top: 1rem;
     left: 1rem;
   }
 
   &__avatar {
     max-width: 3.6rem;
-    height: 3rem;
+    height: 3.2rem;
     border-radius: 50%;
-    &--bigger-screen {
+    @include media-tablet {
       display: none;
     }
+    &--bigger-screen {
+      display: none;
+      @include media-tablet {
+        display: initial;
+      }
+    }
+  }
+
+  &__user-container {
+    position: relative;
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    padding-bottom: 1.6rem;
   }
   &__container {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 1.6rem;
-    position: relative;
+    @include media-tablet {
+      display: flex;
+    }
   }
   &__btn {
     border-radius: 4px;
@@ -58,7 +78,10 @@
     background-repeat: no-repeat;
     color: $White;
     width: 100%;
-    padding: 1rem;
-    margin-bottom: 1.6rem;
+    font-weight: 600;
+    padding: 1rem 1rem 1rem 2rem;
+    @include media-tablet {
+      width: 12rem;
+    }
   }
 }

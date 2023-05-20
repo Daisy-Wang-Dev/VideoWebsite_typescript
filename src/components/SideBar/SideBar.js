@@ -1,4 +1,5 @@
 import Video from "../../components/Video/Video";
+import "./SideBar.scss";
 
 function SideBar({ Videos, activeVideoID, changeActiveVideo }) {
   const sideBarVideos = Videos.filter((Video) => Video.id !== activeVideoID);

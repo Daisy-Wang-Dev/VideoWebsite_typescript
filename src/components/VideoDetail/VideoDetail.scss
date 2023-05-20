@@ -1,25 +1,92 @@
-@use "../../styles/partials/resets";
+@use "../../styles/partials/global";
 @use "../../styles/partials/fonts";
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-
 .video-details {
-    padding: 0 1.6rem 2.4rem;
-    &__metadata-container{
-        display: flex;
-        justify-content: space-between;
+  padding: 0 1.6rem 2.4rem;
+  @include media-tablet {
+    @include padding-tablet;
+  }
+  @include media-desktop {
+    padding: 2.4rem 0 2.4rem 14rem;
+    border-left: 1px solid $Mercury;
+  }
+  &__title {
+    border-bottom: 1px solid $Mercury;
+    padding-bottom: 1.6rem;
+    @include media-tablet {
+      border: none;
     }
-    &__metadata-interact {
-        display: flex;
-        flex-direction: column;
+  }
+  &__metadata-container {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 3.2rem;
+    border-bottom: 1px solid $Mercury;
+    @include media-tablet {
+      padding-right: 0;
     }
+    @include media-desktop {
+      padding-right: 2.4rem;
+    }
+  }
 
-    &__views {
-        display: flex;
+  &__metadata-text {
+    padding: 1.6rem 0;
+    @include media-tablet {
+      display: flex;
+      gap: 2rem;
+      padding-bottom: 0;
     }
-    &__likes {
-        display: flex;
-    }
+  }
+  &__channel {
+    padding-bottom: 1.6rem;
+  }
+  &__date {
+    color: $Silver;
+    font-weight: 400;
+  }
 
+  &__metadata-interact {
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem 0;
+    @include media-tablet {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 3rem;
+      padding-bottom: 0;
+    }
+  }
+
+  &__views {
+    display: flex;
+    padding-bottom: 1.6rem;
+  }
+
+  &__views-num {
+    color: $Silver;
+    font-weight: 400;
+    padding-left: 0.5rem;
+  }
+  &__likes {
+    display: flex;
+  }
+
+  &__likes-num {
+    color: $Silver;
+    font-weight: 400;
+    padding-left: 0.5rem;
+  }
+  &__description {
+    padding: 1.6rem 0;
+    @include media-tablet {
+      padding: 2.4rem 1.6rem 2.4rem 0;
+      font-size: 1.4rem;
+    }
+    @include media-desktop {
+      padding-right: 4rem;
+    }
+  }
 }

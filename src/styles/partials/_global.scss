@@ -1,4 +1,5 @@
 @use "./mixins" as *;
+@use "./variables" as *;
 
 // Fonts
 h1 {
@@ -43,6 +44,10 @@ body {
     font-size: 1.4rem;
     line-height: 2.2rem;
   }
+}
+
+h1, h2, h3, body {
+  color: $BrainFlix-Black;
 }
 
 button {

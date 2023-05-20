@@ -25,8 +25,8 @@ function VideoDetail({ activeVideoID }) {
         <h1 className="video-details__title">{title}</h1>
         <div className="video-details__metadata-container">
           <div className="video-details__metadata-text">
-            <h3>{channel}</h3>
-            <h3>{readDate}</h3>
+            <h3 className="video-details__channel">By {channel}</h3>
+            <h3 className="video-details__date">{readDate}</h3>
           </div>
           <div className="video-details__metadata-interact">
             <div className="video-details__views">

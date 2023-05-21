@@ -1,5 +1,6 @@
 import "./CommentForm.scss";
 import Avatar from "../../assets/images/Mohan-muruge.jpg";
+import CommentIcon from "../../assets/icons/add_comment.svg";
 
 function CommentForm() {
   return (
@@ -10,14 +11,21 @@ function CommentForm() {
         alt="Comment form avatar"
       />
       <div className="comment-form__text">
-        <h2>JOIN THE CONVERSATION</h2>
+        <h2 className="comment-form__title">JOIN THE CONVERSATION</h2>
         <textarea
           className="comment-form__textarea"
           name="comment"
           id="comment"
           placeholder="Add a new comment"
         ></textarea>
-        <button className="comment-form__btn">COMMENT</button>
+        <div className="comment-form__post">
+          <img
+            className="comment-form__icon"
+            src={CommentIcon}
+            alt="add comment icon"
+          />
+          <button className="comment-form__btn">COMMENT</button>
+        </div>
       </div>
     </section>
   );

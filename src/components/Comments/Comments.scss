@@ -1,0 +1,15 @@
+@use "../../styles/partials/global";
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/mixins" as *;
+
+.comments{
+    padding: 0 1.6rem;
+    @include media-tablet{
+        padding: 0 3.2rem;
+    }
+    &__title{
+        padding-bottom: 2.4rem;
+        font-size: 1.3rem;
+    }
+}

@@ -18,3 +18,13 @@
   padding: 1.6rem 3.2rem;
 }
 
+// Comment states
+@mixin comment-placeholder {
+  font-family: "Avenir Next";
+  font-weight: 400;
+  color: $BrainFlix-Black;
+}
+@mixin comment-active {
+  outline: 0;
+  border:2px solid $BrainFlix-Blue;
+}

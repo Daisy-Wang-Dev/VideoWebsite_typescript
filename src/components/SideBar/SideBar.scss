@@ -6,7 +6,7 @@
 .sidebar {
   &__title {
     color: $Silver;
-    padding: 1.6rem 0 1.6rem;
+    padding: 1.6rem 1.6rem 0;
 
     @include media-tablet{
        padding: 1.6rem 0 0 3.2rem;

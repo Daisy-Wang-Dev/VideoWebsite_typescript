@@ -4,28 +4,65 @@
 @use "../../styles/partials/mixins" as *;
 
 .comment-form {
-   display: flex;
-   padding: 1.6rem;
+   display: flex;  
    gap: 1.6rem;
+   border-bottom: 1px solid $Mercury;
+   
   
   &__avatar {
     max-width: 3.6rem;
-    height: 3rem;
+    height: 3.2rem;
     border-radius: 50%;
+    position: relative;
+    top: 2.8rem;
+  }
+  &__text{
+    width: 100%;
   }
 
-  &
+  &__title{
+    color: $Silver;
+    padding-bottom: 0.5rem;
+  }
 
+  &__textarea{
+    width: 100%;
+    border: 1px solid $Mercury;
+    border-radius: 4px;
+    background-color: $Alabaster;
+    padding: 1.2rem;
+    margin: 0 0 1rem;
+    font-family: "Avenir Next";
+    font-weight: 400;
+    min-height: 3.6rem;
+    height: 10rem;
+    @include media-tablet{
+      padding: 1.6rem;
+    }
+    &::placeholder{
+      @include comment-placeholder;
+    }
+    &:focus{
+      @include comment-active;
+    }
+  }
+   &__post{
+    position: relative;
+   }
   &__btn {
     border-radius: 4px;
     border: none;
     background-color: $BrainFlix-Blue;
-    background-image: url("../../assets/icons/add_comment.svg");
-    background-position: left;
-    background-repeat: no-repeat;
     color: $White;
     width: 100%;
     padding: 1rem;
     margin-bottom: 1.6rem;
+  }
+
+  &__icon{
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+
   }
 }

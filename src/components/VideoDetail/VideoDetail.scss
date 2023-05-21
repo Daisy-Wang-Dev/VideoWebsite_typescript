@@ -4,7 +4,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .video-details {
-  padding: 0 1.6rem 2.4rem;
+  padding: 0 1.6rem;
   @include media-tablet {
     @include padding-tablet;
   }

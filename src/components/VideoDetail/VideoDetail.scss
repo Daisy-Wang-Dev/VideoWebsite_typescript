@@ -28,7 +28,8 @@
       padding-right: 0;
     }
     @include media-desktop {
-      padding-right: 2.4rem;
+      padding: 0 2.4rem 1rem 0;
+      align-items: flex-end;
     }
   }
 
@@ -39,9 +40,15 @@
       gap: 2rem;
       padding-bottom: 0;
     }
+    @include media-desktop {
+      padding: 0;
+    }
   }
   &__channel {
     padding-bottom: 1.6rem;
+    @include media-desktop {
+      padding: 0;
+    }
   }
   &__date {
     color: $Silver;
@@ -63,6 +70,9 @@
   &__views {
     display: flex;
     padding-bottom: 1.6rem;
+    @include media-desktop {
+      padding: 0;
+    }
   }
 
   &__views-num {
@@ -86,7 +96,7 @@
       font-size: 1.4rem;
     }
     @include media-desktop {
-      padding-right: 4rem;
+      padding-right: 1.2rem;
     }
   }
 }

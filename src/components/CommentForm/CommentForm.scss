@@ -9,6 +9,7 @@
   border-bottom: 1px solid $Mercury;
   @include media-desktop {
     border: none;
+    padding-right: 2.4rem;
   }
 
   &__avatar {
@@ -16,8 +17,12 @@
     height: 3.2rem;
     border-radius: 50%;
     position: relative;
-    top: 2.8rem;
+    top: 2.4rem;
     object-fit: cover;
+    @include media-tablet{
+      max-width: 4rem;
+      height: 4rem;
+    }
   }
   &__text {
     width: 100%;

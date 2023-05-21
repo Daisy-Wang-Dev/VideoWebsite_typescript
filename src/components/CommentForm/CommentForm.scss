@@ -4,11 +4,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .comment-form {
-   display: flex;  
-   gap: 1.6rem;
-   border-bottom: 1px solid $Mercury;
-   
-  
+  display: flex;
+  gap: 1.6rem;
+
   &__avatar {
     max-width: 3.6rem;
     height: 3.2rem;
@@ -16,16 +14,25 @@
     position: relative;
     top: 2.8rem;
   }
-  &__text{
+  &__text {
     width: 100%;
+    @include media-tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
   }
 
-  &__title{
+  &__title {
     color: $Silver;
     padding-bottom: 0.5rem;
   }
-
-  &__textarea{
+  &__comment {
+    @include media-tablet {
+      width: 100%;
+    }
+  }
+  &__textarea {
     width: 100%;
     border: 1px solid $Mercury;
     border-radius: 4px;
@@ -36,19 +43,21 @@
     font-weight: 400;
     min-height: 3.6rem;
     height: 10rem;
-    @include media-tablet{
+    @include media-tablet {
       padding: 1.6rem;
+      height: 4rem;
     }
-    &::placeholder{
+    &::placeholder {
       @include comment-placeholder;
     }
-    &:focus{
+    &:focus {
       @include comment-active;
     }
   }
-   &__post{
+  &__post {
     position: relative;
-   }
+    width: 100%;
+  }
   &__btn {
     border-radius: 4px;
     border: none;
@@ -57,12 +66,14 @@
     width: 100%;
     padding: 1rem;
     margin-bottom: 1.6rem;
+    @include media-tablet {
+      width: 60%;
+    }
   }
 
-  &__icon{
+  &__icon {
     position: absolute;
     top: 1rem;
     left: 0.5rem;
-
   }
 }

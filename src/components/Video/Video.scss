@@ -6,19 +6,37 @@
 .sidebar {
   &__video {
     display: flex;
-    align-items: center;
-    padding: 1.6rem;
+    padding: 1.6rem 1.6rem 0 1.6rem;
     gap: 1.2rem;
+    @include media-tablet {
+      @include padding-tablet;
+    }
+    @include media-desktop{
+      padding: 0 1.6rem 2.4rem;
+      
+    }
   }
 
   &__video-img-container {
     background-color: $Mercury;
-    width: 12rem;
-    height: 6rem;
+    width: 10rem;
+    height: 6.4rem;
+    border-radius: 4px;
   }
   &__video-img {
     width: 10rem;
+    height: 6.4rem;
     border-radius: 4px;
     aspect-ratio: 16/9;
+  }
+
+  &__video-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include media-tablet {
+      width: 20rem;
+    }
   }
 }

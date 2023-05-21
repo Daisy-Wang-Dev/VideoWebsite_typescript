@@ -5,13 +5,14 @@
 @use "./styles/partials/mixins" as *;
 
 main {
-    @include media-desktop{
-           display: flex;
-           padding-right: 14rem ;
- 
-    }
+  @include media-desktop {
+    display: flex;
+    padding: 0 14rem 0 0;
+  }
 }
 
-.video-details-container{
+.video-details-container {
+  @include media-desktop {
     border-right: 1px solid $Mercury;
+  }
 }

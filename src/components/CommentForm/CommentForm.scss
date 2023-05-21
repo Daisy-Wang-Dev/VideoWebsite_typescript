@@ -6,6 +6,10 @@
 .comment-form {
   display: flex;
   gap: 1.6rem;
+  border-bottom: 1px solid $Mercury;
+  @include media-desktop {
+    border: none;
+  }
 
   &__avatar {
     max-width: 3.6rem;
@@ -13,6 +17,7 @@
     border-radius: 50%;
     position: relative;
     top: 2.8rem;
+    object-fit: cover;
   }
   &__text {
     width: 100%;
@@ -58,7 +63,7 @@
   &__post {
     position: relative;
 
-    @include media-tablet{
+    @include media-tablet {
       width: 30%;
     }
   }

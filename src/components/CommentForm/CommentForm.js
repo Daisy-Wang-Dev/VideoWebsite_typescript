@@ -19,15 +19,7 @@ function CommentForm() {
             id="comment"
             placeholder="Add a new comment"
           ></textarea>
-
         </div>
-        {/* <h2 className="comment-form__title">JOIN THE CONVERSATION</h2>
-        <textarea
-          className="comment-form__textarea"
-          name="comment"
-          id="comment"
-          placeholder="Add a new comment"
-        ></textarea> */}
         <div className="comment-form__post">
           <img
             className="comment-form__icon"

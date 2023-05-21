@@ -5,9 +5,10 @@
 @use "./styles/partials/mixins" as *;
 
 main {
+    padding-bottom: 2.4rem;
   @include media-desktop {
     display: flex;
-    padding: 0 10rem 0 0;
+    padding: 0 10rem 0 2.4rem;
   }
 }
 

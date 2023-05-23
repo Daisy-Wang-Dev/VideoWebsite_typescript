@@ -1,4 +1,5 @@
 import "./Header.scss";
+import {Link } from "react-router-dom";
 import BrainflixLogo from "../../assets/logo/BrainFlix-logo.svg";
 import Avatar from "../../assets/images/Mohan-muruge.jpg";
 import SearchLogo from "../../assets/icons/search.svg";
@@ -7,13 +8,13 @@ function Header() {
   return (
     <header className="header">
       <div className="header__logo">
-        <a className="header__link" href="../../../public/index.html">
+        <Link className="header__link" to="/">
           <img
             className="header__logo-img"
             src={BrainflixLogo}
             alt="BrainFlix logo"
           />
-        </a>
+        </Link>
       </div>
       <div className="header__container">
         <div className="header__user-container">
@@ -37,7 +38,7 @@ function Header() {
             src={UploadIcon}
             alt="upload icon"
           />
-          <button className="header__btn">UPLOAD</button>     
+          <Link className="header__btn" to="upload">UPLOAD</Link>     
           <img className="header__avatar header__avatar--bigger-screen" src={Avatar} alt="profile avatar" />
         </div>
       </div>

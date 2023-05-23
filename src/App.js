@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import "./App.scss";
 import Videos from "./data/videos.json";
 import Header from "./components/Header/Header.js";
@@ -14,21 +15,28 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
-      <VideoPlayer Videos={Videos} activeVideoID={activeVideoID} />
-      {/* /* todo: Add components */}
-      <main>
-        <div className="video-details-container">
-          <VideoDetail activeVideoID={activeVideoID} />
-        </div>
-        <SideBar
-          Videos={Videos}
-          activeVideoID={activeVideoID}
-          changeActiveVideo={changeActiveVideo}
-        />
-      </main>
-    </div>
+    <>
+      <BrowserRouter>
+        <Header />
+
+        <Routes>
+          <Route></Route>
+        </Routes>
+      </BrowserRouter>
+      <div className="App">
+        <VideoPlayer Videos={Videos} activeVideoID={activeVideoID} />
+        <main>
+          <div className="video-details-container">
+            <VideoDetail activeVideoID={activeVideoID} />
+          </div>
+          <SideBar
+            Videos={Videos}
+            activeVideoID={activeVideoID}
+            changeActiveVideo={changeActiveVideo}
+          />
+        </main>
+      </div>
+    </>
   );
 }
 

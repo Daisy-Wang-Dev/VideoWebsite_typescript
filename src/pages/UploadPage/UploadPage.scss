@@ -1,0 +1,79 @@
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.upload {
+  padding: 1.6rem 1.6rem 2.4rem;
+
+  &__title {
+    padding-bottom: 2.4rem;
+  }
+
+  &__video {
+    width: 100%;
+  }
+  &__thumbnail-title {
+    color: $Silver;
+  }
+  &__preview {
+    width: 100%;
+    border-radius: 4px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem 0;
+  }
+  &__form-title {
+    color: $Silver;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+  }
+  &__name,
+  &__description {
+    border: 1px solid $Mercury;
+    border-radius: 4px;
+    padding: 1.2rem;
+    margin: 0 0 1.6rem;
+    background-color: $Alabaster;
+    &:focus {
+      outline: 0;
+      border: 2px solid $BrainFlix-Blue;
+    }
+    &::placeholder{
+        @include comment-placeholder;
+    }
+  }
+
+  &__description {
+    height: 10rem;
+  }
+  &__btns {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  &__publish {
+    background-color: $BrainFlix-Blue;
+    color: $White;
+  }
+  &__cancel{
+    color: $BrainFlix-Blue;
+  }
+  &__publish,
+  &__cancel {
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 1rem;
+    margin: 0.5rem;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+  }
+  &__icon {
+    position: absolute;
+    width: 2rem;
+    top: 1.2rem;
+    left: 0.8rem;
+  }
+}

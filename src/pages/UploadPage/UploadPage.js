@@ -28,7 +28,9 @@ function UploadPage() {
             id="name"
             placeholder="Add a title to your video"
           />
-          <label className="upload__form-title" htmlFor="text">ADD A VIDEO DESCRIPTION</label>
+          <label className="upload__form-title" htmlFor="text">
+            ADD A VIDEO DESCRIPTION
+          </label>
           <textarea
             className="upload__description"
             name="description"
@@ -38,8 +40,12 @@ function UploadPage() {
         </form>
         <div className="upload__btns">
           <img className="upload__icon" src={PublishIcon} alt="Publish icon" />
-          <Link className="upload__publish" to="/">PUBLISH</Link>
-          <Link className="upload__cancel" to="/">CANCEL</Link>
+          <Link className="upload__publish" to="/">
+            PUBLISH
+          </Link>
+          <Link className="upload__cancel" to="/">
+            CANCEL
+          </Link>
         </div>
       </div>
     </section>

@@ -1,13 +1,31 @@
 import "./VideoDetail.scss";
-import VideoDetails from "../../data/video-details.json";
+import { BASE_URL, API_KEY } from "../../utils/API";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import ViewIcon from "../../assets/icons/views.svg";
 import LikesIcon from "../../assets/icons/likes.svg";
 import Comments from "../Comments/Comments";
 
 function VideoDetail({ activeVideoID }) {
-  const activeVideoDetails = VideoDetails.find(
-    (VideoDetail) => VideoDetail.id === activeVideoID
-  );
+  const [activeVideoDetails, setActiveVideoDetails] = useState(null);
+
+  const getVideoDetails = async () => {
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/videos/${activeVideoID}?api_key=${API_KEY}`
+      );
+      setActiveVideoDetails(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getVideoDetails();
+  }, []);
+
+  if (!activeVideoDetails) {
+    return <p>Details Loading</p>;
+  }
 
   const { title, channel, description, timestamp, views, likes, comments } =
     activeVideoDetails;

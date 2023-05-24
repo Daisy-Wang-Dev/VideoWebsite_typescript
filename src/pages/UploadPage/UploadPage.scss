@@ -40,8 +40,8 @@
       outline: 0;
       border: 2px solid $BrainFlix-Blue;
     }
-    &::placeholder{
-        @include comment-placeholder;
+    &::placeholder {
+      @include comment-placeholder;
     }
   }
 
@@ -57,7 +57,7 @@
     background-color: $BrainFlix-Blue;
     color: $White;
   }
-  &__cancel{
+  &__cancel {
     color: $BrainFlix-Blue;
   }
   &__publish,

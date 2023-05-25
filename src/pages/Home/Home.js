@@ -9,6 +9,7 @@ import axios from "axios";
 function Home() {
   const [videos, setVideos] = useState(null);
   const [activeVideoID, setActiveVideoID] = useState("");
+  const { videoID } = useParams();
 
   const getVideos = async () => {
     try {
@@ -23,15 +24,24 @@ function Home() {
     getVideos();
   }, []);
 
+  let newActiveVideo;
   useEffect(() => {
     if (videos) {
-      setActiveVideoID(videos[0].id);
+      if (!videoID) {
+        setActiveVideoID(videos[0].id);
+      } else {
+        const displayedVideo = videos.find((video) => video.id === videoID);
+        setActiveVideoID(displayedVideo.id);
+      }
     }
-  }, [videos]);
+  }, [videos, videoID]);
+
 
   if (!videos || !activeVideoID) {
     return <p>Page Loading...</p>;
   }
+
+  const sideBarVideos = videos.filter((video) => video.id !== activeVideoID);
 
   return (
     <>
@@ -40,10 +50,7 @@ function Home() {
         <div className="video-details-container">
           <VideoDetail activeVideoID={activeVideoID} />
         </div>
-        <SideBar
-          Videos={videos}
-          activeVideoID={activeVideoID}
-        />
+        <SideBar Videos={sideBarVideos} />
       </main>
     </>
   );

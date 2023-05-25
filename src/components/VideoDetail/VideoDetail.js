@@ -21,7 +21,7 @@ function VideoDetail({ activeVideoID }) {
   };
   useEffect(() => {
     getVideoDetails();
-  }, []);
+  }, [activeVideoID]);
 
   if (!activeVideoDetails) {
     return <p>Details Loading</p>;

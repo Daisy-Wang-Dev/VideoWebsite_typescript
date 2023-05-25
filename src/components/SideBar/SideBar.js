@@ -1,17 +1,17 @@
+import { Link } from "react-router-dom";
 import Video from "../../components/Video/Video";
 import "./SideBar.scss";
 
-function SideBar({ Videos, activeVideoID, changeActiveVideo }) {
-  const sideBarVideos = Videos.filter((Video) => Video.id !== activeVideoID);
+function SideBar({ Videos}) {
   return (
     <section className="sidebar">
       <h2 className="sidebar__title">NEXT VIDEOS</h2>
-      {sideBarVideos.map((video) => (
-        <Video
-          key={video.id}
-          video={video}
-          changeActiveVideo={changeActiveVideo}
-        />
+      {Videos.map((video) => (
+        <Link to={`/video/${video.id}`} key={video.id}>
+          <Video
+            video={video}
+          />
+        </Link>
       ))}
     </section>
   );

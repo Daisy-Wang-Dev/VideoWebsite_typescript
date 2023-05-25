@@ -1,12 +1,8 @@
 import "./Video.scss";
 
-function Video({ video, changeActiveVideo }) {
-    const HandleClick = () => {
-        changeActiveVideo(video.id);
-    }
-
+function Video({ video }) {
   return (
-    <article onClick={HandleClick} className="sidebar__video">
+    <article className="sidebar__video">
       <div className="sidebar__video-img-container">
         <img
           className="sidebar__video-img"

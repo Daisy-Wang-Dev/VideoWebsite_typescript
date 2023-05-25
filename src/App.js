@@ -8,7 +8,6 @@ import SideBar from "./components/SideBar/SideBar";
 import UploadPage from "./pages/UploadPage/UploadPage";
 import Home from "./pages/Home/Home";
 import { useState } from "react";
-// import Home from "./pages/Home/Home";
 
 function App() {
   // const [activeVideoID, setActiveVideoID] = useState(Videos[0].id);
@@ -24,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="upload" element={<UploadPage/>}/>
-          {/* <Route path="video/videoID" element={<Home/>}/> */}
+          <Route path="video/:videoID" element={<Home/>}/>
         </Routes>
       </BrowserRouter>
       {/* <div className="App">

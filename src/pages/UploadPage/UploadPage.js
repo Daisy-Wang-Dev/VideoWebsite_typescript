@@ -39,19 +39,18 @@ function UploadPage() {
           ></textarea>
         </form>
       </div>
-        <div className="upload__btns">
-          <img className="upload__icon" src={PublishIcon} alt="Publish icon" />
-          <Link className="upload__publish" to="/">
-            PUBLISH
-          </Link>
-          <Link className="upload__cancel" to="/">
-            CANCEL
-          </Link>
-          <Link className="upload__publish--bigscreen" to="/">
-            PUBLISH
-          </Link>
-        </div>
-      
+      <div className="upload__btns">
+        <img className="upload__icon" src={PublishIcon} alt="Publish icon" />
+        <Link className="upload__publish" to="/">
+          PUBLISH
+        </Link>
+        <Link className="upload__cancel" to="/">
+          CANCEL
+        </Link>
+        <Link className="upload__publish--bigscreen" to="/">
+          PUBLISH
+        </Link>
+      </div>
     </section>
   );
 }

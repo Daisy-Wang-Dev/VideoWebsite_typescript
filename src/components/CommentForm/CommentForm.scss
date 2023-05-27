@@ -53,6 +53,7 @@
     font-weight: 400;
     min-height: 3.6rem;
     height: 10rem;
+    resize: none;
     @include media-tablet {
       padding: 1.6rem;
       height: 4rem;

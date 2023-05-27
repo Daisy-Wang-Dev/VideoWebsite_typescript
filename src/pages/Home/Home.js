@@ -24,7 +24,6 @@ function Home() {
     getVideos();
   }, []);
 
-  let newActiveVideo;
   useEffect(() => {
     if (videos) {
       if (!videoID) {
@@ -36,7 +35,6 @@ function Home() {
     }
   }, [videos, videoID]);
 
-
   if (!videos || !activeVideoID) {
     return <p>Page Loading...</p>;
   }
@@ -45,12 +43,12 @@ function Home() {
 
   return (
     <>
-      <VideoPlayer Videos={videos} activeVideoID={activeVideoID} />
+      <VideoPlayer videos={videos} activeVideoID={activeVideoID} />
       <main>
         <div className="video-details-container">
           <VideoDetail activeVideoID={activeVideoID} />
         </div>
-        <SideBar Videos={sideBarVideos} />
+        <SideBar videos={sideBarVideos} />
       </main>
     </>
   );

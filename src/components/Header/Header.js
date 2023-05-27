@@ -4,6 +4,7 @@ import BrainflixLogo from "../../assets/logo/BrainFlix-logo.svg";
 import Avatar from "../../assets/images/Mohan-muruge.jpg";
 import SearchLogo from "../../assets/icons/search.svg";
 import UploadIcon from "../../assets/icons/upload.svg";
+
 function Header() {
   return (
     <header className="header">

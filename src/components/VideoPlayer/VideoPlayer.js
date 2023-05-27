@@ -1,8 +1,8 @@
 import "./VideoPlayer.scss";
 
-function VideoPlayer({ Videos, activeVideoID }) {
-  const displayedVideo = Videos.find(
-    (Video) => Video.id === activeVideoID
+function VideoPlayer({ videos, activeVideoID }) {
+  const displayedVideo = videos.find(
+    (video) => video.id === activeVideoID
   ).image;
 
   return (

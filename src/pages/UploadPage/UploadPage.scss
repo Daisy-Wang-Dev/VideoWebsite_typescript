@@ -1,19 +1,55 @@
+@use "../../styles/partials/global";
 @use "../../styles/partials/fonts";
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
 .upload {
   padding: 1.6rem 1.6rem 2.4rem;
+  @include media-tablet {
+    padding: 1.6rem 3.2rem;
+  }
+  @include media-desktop {
+    padding: 1.6rem 14rem;
+    max-width: 1280px;
+    margin: auto;
+  }
 
   &__title {
-    padding-bottom: 2.4rem;
+    padding: 1.6rem 0 2.4rem;
+    @include media-tablet {
+      border-bottom: 1px solid $Mercury;
+    }
+  }
+  &__container {
+    @include media-tablet {
+      border-bottom: 1px solid $Mercury;
+    }
+    @include media-desktop {
+      display: flex;
+      gap: 3rem;
+      align-items: baseline;
+    }
   }
 
   &__video {
     width: 100%;
   }
+
+  &__thumbnail {
+    @include media-desktop {
+      width: 50%;
+    }
+  }
   &__thumbnail-title {
     color: $Silver;
+    @include media-tablet {
+      padding: 2.4rem 0 1rem;
+      font-size: 1.4rem;
+      line-height: 2.2;
+    }
+    @include media-desktop {
+      padding-bottom: 0.5rem;
+    }
   }
   &__preview {
     width: 100%;
@@ -23,6 +59,13 @@
     display: flex;
     flex-direction: column;
     padding: 1.6rem 0;
+    @include media-tablet {
+      margin-bottom: 1.6rem;
+    }
+    @include media-desktop {
+      width: 100%;
+      margin: 0;
+    }
   }
   &__form-title {
     color: $Silver;
@@ -52,16 +95,14 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    @include media-tablet {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
   }
   &__publish {
     background-color: $BrainFlix-Blue;
     color: $White;
-  }
-  &__cancel {
-    color: $BrainFlix-Blue;
-  }
-  &__publish,
-  &__cancel {
     border-radius: 4px;
     text-decoration: none;
     padding: 1rem;
@@ -69,11 +110,46 @@
     width: 100%;
     font-weight: 700;
     text-align: center;
+    @include media-tablet {
+      display: none;
+    }
+    &--bigscreen {
+      display: none;
+      @include media-tablet {
+        display: inline;
+        background-color: $BrainFlix-Blue;
+        color: $White;
+        border-radius: 4px;
+        text-decoration: none;
+        padding: 1rem 6rem;
+        margin: 0.5rem;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
   }
+  &__cancel {
+    color: $BrainFlix-Blue;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 1rem;
+    margin: 0.5rem;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    @include media-tablet {
+      width: 20%;
+    }
+  }
+
   &__icon {
     position: absolute;
     width: 2rem;
-    top: 1.2rem;
+    top: 1.4rem;
     left: 0.8rem;
+    @include media-tablet {
+      left: auto;
+      right: 16rem;
+    }
   }
 }

@@ -1,8 +1,20 @@
 import "./UploadPage.scss";
 import UploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import PublishIcon from "../../assets/icons/publish.svg";
+import { useState } from "react";
+import axios from "axios";
 
 function UploadPage() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newVideo = {
+      title: e.target.title.value,
+      description: e.target.description.value,
+    };
+    console.log(newVideo);
+    // TODO: AXIOS POST
+  };
+
   return (
     <section className="upload">
       <h1 className="upload__title">Upload Video</h1>
@@ -17,14 +29,15 @@ function UploadPage() {
             />
           </div>
         </div>
-        <form className="upload__form">
+        <form className="upload__form" onSubmit={handleSubmit}>
           <label className="upload__form-title" htmlFor="title">
             TITLE YOUR VIDEO
           </label>
           <input
             type="text"
             className="upload__name"
-            id="name"
+            name="title"
+            id="title"
             placeholder="Add a title to your video"
           />
           <label className="upload__form-title" htmlFor="text">
@@ -40,9 +53,13 @@ function UploadPage() {
       </div>
       <div className="upload__btns">
         <img className="upload__icon" src={PublishIcon} alt="Publish icon" />
-        <button className="upload__publish">PUBLISH</button>
+        <button className="upload__publish" type="submit">
+          PUBLISH
+        </button>
         <button className="upload__cancel">CANCEL</button>
-        <button className="upload__publish--bigscreen">PUBLISH</button>
+        <button className="upload__publish--bigscreen" type="submit">
+          PUBLISH
+        </button>
       </div>
     </section>
   );

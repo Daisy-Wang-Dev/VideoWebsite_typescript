@@ -90,6 +90,7 @@
 
   &__description {
     height: 10rem;
+    resize: none;
   }
   &__btns {
     position: relative;
@@ -102,6 +103,7 @@
   }
   &__publish {
     background-color: $BrainFlix-Blue;
+    border: none;
     color: $White;
     border-radius: 4px;
     text-decoration: none;
@@ -118,6 +120,7 @@
       @include media-tablet {
         display: inline;
         background-color: $BrainFlix-Blue;
+        border: none;
         color: $White;
         border-radius: 4px;
         text-decoration: none;
@@ -130,6 +133,8 @@
   }
   &__cancel {
     color: $BrainFlix-Blue;
+    background-color: $White;
+    border: none;
     border-radius: 4px;
     text-decoration: none;
     padding: 1rem;
@@ -149,7 +154,7 @@
     left: 0.8rem;
     @include media-tablet {
       left: auto;
-      right: 16rem;
+      right: 15rem;
     }
   }
 }

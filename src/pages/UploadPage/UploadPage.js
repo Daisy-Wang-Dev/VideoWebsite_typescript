@@ -1,5 +1,4 @@
 import "./UploadPage.scss";
-import { Link } from "react-router-dom";
 import UploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import PublishIcon from "../../assets/icons/publish.svg";
 
@@ -41,15 +40,9 @@ function UploadPage() {
       </div>
       <div className="upload__btns">
         <img className="upload__icon" src={PublishIcon} alt="Publish icon" />
-        <Link className="upload__publish" to="/">
-          PUBLISH
-        </Link>
-        <Link className="upload__cancel" to="/">
-          CANCEL
-        </Link>
-        <Link className="upload__publish--bigscreen" to="/">
-          PUBLISH
-        </Link>
+        <button className="upload__publish">PUBLISH</button>
+        <button className="upload__cancel">CANCEL</button>
+        <button className="upload__publish--bigscreen">PUBLISH</button>
       </div>
     </section>
   );

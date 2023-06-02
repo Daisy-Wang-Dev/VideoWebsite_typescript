@@ -3,16 +3,29 @@ import UploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import PublishIcon from "../../assets/icons/publish.svg";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function UploadPage() {
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newVideo = {
       title: e.target.title.value,
       description: e.target.description.value,
     };
-    console.log(newVideo);
+
+    // navigate("/");
     // TODO: AXIOS POST
+    axios
+      .post(process.env.REACT_APP_BASE_URL + "/videos", newVideo)
+      .then(() => {
+        e.target.reset();
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -49,9 +62,23 @@ function UploadPage() {
             id="description"
             placeholder="Add a description to your video"
           ></textarea>
+          <div className="upload__btns">
+            <img
+              className="upload__icon"
+              src={PublishIcon}
+              alt="Publish icon"
+            />
+            <button className="upload__publish" type="submit">
+              PUBLISH
+            </button>
+            <button className="upload__cancel">CANCEL</button>
+            <button className="upload__publish--bigscreen" type="submit">
+              PUBLISH
+            </button>
+          </div>
         </form>
       </div>
-      <div className="upload__btns">
+      {/* <div className="upload__btns">
         <img className="upload__icon" src={PublishIcon} alt="Publish icon" />
         <button className="upload__publish" type="submit">
           PUBLISH
@@ -60,7 +87,7 @@ function UploadPage() {
         <button className="upload__publish--bigscreen" type="submit">
           PUBLISH
         </button>
-      </div>
+      </div> */}
     </section>
   );
 }

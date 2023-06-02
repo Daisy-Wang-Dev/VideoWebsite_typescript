@@ -11,14 +11,25 @@ function Home() {
   const [activeVideoID, setActiveVideoID] = useState("");
   const { videoID } = useParams();
 
-  const getVideos = async () => {
+  // const getVideos = async () => {
+  //   try {
+  //     const response = await axios.get(`${BASE_URL}/videos?api_key=${API_KEY}`);
+  //     setVideos(response.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+    const getVideos = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/videos?api_key=${API_KEY}`);
+      const response = await axios.get(process.env.REACT_APP_BASE_URL+"/videos");
       setVideos(response.data);
     } catch (error) {
       console.log(error);
     }
   };
+
+  
 
   useEffect(() => {
     getVideos();

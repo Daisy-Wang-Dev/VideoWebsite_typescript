@@ -12,7 +12,7 @@ function VideoDetail({ activeVideoID }) {
   const getVideoDetails = async () => {
     try {
       const response = await axios.get(
-        `${BASE_URL}/videos/${activeVideoID}?api_key=${API_KEY}`
+        process.env.REACT_APP_BASE_URL + "/videos/" + activeVideoID
       );
       setActiveVideoDetails(response.data);
     } catch (error) {

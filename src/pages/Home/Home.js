@@ -1,7 +1,6 @@
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoDetail from "../../components/VideoDetail/VideoDetail";
 import SideBar from "../../components/SideBar/SideBar";
-import { BASE_URL, API_KEY } from "../../utils/API";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";

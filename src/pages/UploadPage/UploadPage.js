@@ -1,11 +1,15 @@
 import "./UploadPage.scss";
 import UploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import PublishIcon from "../../assets/icons/publish.svg";
-import { useState } from "react";
+import { useState, CSSProperties } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
+import PacmanLoader from "react-spinners/PacmanLoader";
+
 function UploadPage() {
+  let [loading, setLoading] = useState(false);
+
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -19,8 +23,12 @@ function UploadPage() {
     axios
       .post(process.env.REACT_APP_BASE_URL + "/videos", newVideo)
       .then(() => {
-        e.target.reset();
-        navigate("/");
+        setError("");
+        setLoading(true);
+        setTimeout(() => {
+          e.target.reset();
+          navigate("/");
+        }, 1000);
       })
       .catch((error) => {
         console.log(error);
@@ -57,12 +65,21 @@ function UploadPage() {
             ADD A VIDEO DESCRIPTION
           </label>
           <textarea
-            className={`upload__description ${error ? "upload__description--error" : ""}` }
+            className={`upload__description ${
+              error ? "upload__description--error" : ""
+            }`}
             name="description"
             id="description"
             placeholder="Add a description to your video"
           ></textarea>
           <div className="upload__btns">
+            {loading && (
+              <>
+                <span className="upload__message">Redirecting</span>
+                <PacmanLoader className="upload__success" color="#0095ff" />
+              </>
+            )}
+
             {error && <p className="upload__error">{error}</p>}
             <img
               className="upload__icon"

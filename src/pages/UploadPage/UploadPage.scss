@@ -161,6 +161,16 @@
       top: 2.5rem;
     }
   }
+  &__message{
+    padding: 1.5rem;
+    color: $BrainFlix-Blue;
+  }
+   &__success {
+    margin-right: 6rem;
+    width: 2.5rem;
+    font-weight: 700;
+
+  }
    &__error{
     color: red;
     padding: 1.5rem;

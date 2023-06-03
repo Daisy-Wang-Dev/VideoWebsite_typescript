@@ -1,7 +1,7 @@
 import "./UploadPage.scss";
 import UploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import PublishIcon from "../../assets/icons/publish.svg";
-import { useState, CSSProperties } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 

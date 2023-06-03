@@ -5,6 +5,7 @@
 
 .video-details {
   padding: 0 1.6rem;
+  min-width: 82rem;
   @include media-tablet {
     @include padding-tablet;
   }

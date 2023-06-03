@@ -1,5 +1,4 @@
 import "./VideoDetail.scss";
-import { BASE_URL, API_KEY } from "../../utils/API";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ViewIcon from "../../assets/icons/views.svg";

@@ -6,6 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function UploadPage() {
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -15,8 +16,6 @@ function UploadPage() {
       description: e.target.description.value,
     };
 
-    // navigate("/");
-    // TODO: AXIOS POST
     axios
       .post(process.env.REACT_APP_BASE_URL + "/videos", newVideo)
       .then(() => {

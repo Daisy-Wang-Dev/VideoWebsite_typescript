@@ -3,7 +3,7 @@ import UploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import PublishIcon from "../../assets/icons/publish.svg";
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function UploadPage() {
   const [error, setError] = useState("");
@@ -24,6 +24,7 @@ function UploadPage() {
       })
       .catch((error) => {
         console.log(error);
+        setError(error.response.data);
       });
   };
 
@@ -47,7 +48,7 @@ function UploadPage() {
           </label>
           <input
             type="text"
-            className="upload__name"
+            className={`upload__name ${error ? "upload__name--error" : ""}`}
             name="title"
             id="title"
             placeholder="Add a title to your video"
@@ -56,12 +57,13 @@ function UploadPage() {
             ADD A VIDEO DESCRIPTION
           </label>
           <textarea
-            className="upload__description"
+            className={`upload__description ${error ? "upload__description--error" : ""}` }
             name="description"
             id="description"
             placeholder="Add a description to your video"
           ></textarea>
           <div className="upload__btns">
+            {error && <p className="upload__error">{error}</p>}
             <img
               className="upload__icon"
               src={PublishIcon}
@@ -70,23 +72,15 @@ function UploadPage() {
             <button className="upload__publish" type="submit">
               PUBLISH
             </button>
-            <button className="upload__cancel">CANCEL</button>
+            <Link to="/" className="upload__cancel">
+              CANCEL
+            </Link>
             <button className="upload__publish--bigscreen" type="submit">
               PUBLISH
             </button>
           </div>
         </form>
       </div>
-      {/* <div className="upload__btns">
-        <img className="upload__icon" src={PublishIcon} alt="Publish icon" />
-        <button className="upload__publish" type="submit">
-          PUBLISH
-        </button>
-        <button className="upload__cancel">CANCEL</button>
-        <button className="upload__publish--bigscreen" type="submit">
-          PUBLISH
-        </button>
-      </div> */}
     </section>
   );
 }

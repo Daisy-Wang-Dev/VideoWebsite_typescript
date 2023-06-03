@@ -84,6 +84,9 @@
     &::placeholder {
       @include comment-placeholder;
     }
+    &--error{
+      border: 2px solid red;
+    }
   }
 
   &__description {
@@ -158,4 +161,9 @@
       top: 2.5rem;
     }
   }
+   &__error{
+    color: red;
+    padding: 1.5rem;
+    font-weight: 700;
+   }
 }

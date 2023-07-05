@@ -8,16 +8,17 @@ import { Link, useNavigate } from "react-router-dom";
 import PacmanLoader from "react-spinners/PacmanLoader";
 
 function UploadPage() {
-  let [loading, setLoading] = useState(false);
+  let [loading, setLoading] = useState<boolean>(false);
 
-  const [error, setError] = useState("");
+  const [error, setError] = useState<String>("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const {title, description} = e.target as HTMLFormElement;
     const newVideo = {
-      title: e.target.title.value,
-      description: e.target.description.value,
+      title: title,
+      description: description,
     };
 
     axios
@@ -26,7 +27,7 @@ function UploadPage() {
         setError("");
         setLoading(true);
         setTimeout(() => {
-          e.target.reset();
+          (e.target as HTMLFormElement).reset();
           navigate("/");
         }, 1000);
       })

@@ -1,5 +1,5 @@
 import "./CommentForm.scss";
-import Avatar from "../../assets/images/Mohan-muruge.jpg";
+import Avatar from "../../assets/images/gary-bendig-6GMq7AGxNbE-unsplash.jpg";
 import CommentIcon from "../../assets/icons/add_comment.svg";
 
 function CommentForm() {

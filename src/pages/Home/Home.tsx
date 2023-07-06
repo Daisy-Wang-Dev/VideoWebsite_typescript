@@ -11,7 +11,7 @@ interface singleVideo {
   channel: string;
   image: string;
 }
-const Home: React.FC = () => {
+const Home = () => {
   const [videos, setVideos] = useState<singleVideo[] | null>(null);
   const [activeVideoID, setActiveVideoID] = useState<string>("");
   const { videoID } = useParams<{ videoID?: string }>();

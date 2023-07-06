@@ -1,6 +1,16 @@
 import "./Video.scss";
 
-function Video({ video }) {
+interface singleVideo {
+  id: string;
+  title: string;
+  channel: string;
+  image: string;
+}
+
+interface VideoProp {
+  video: singleVideo;
+}
+function Video({ video }: VideoProp) {
   return (
     <article className="sidebar__video">
       <div className="sidebar__video-img-container">

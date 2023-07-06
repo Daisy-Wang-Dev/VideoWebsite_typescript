@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import Video from "../Video/Video";
 import "./SideBar.scss";
 
-interface Video {
+interface singleVideo {
   id: string;
   title: string;
   channel: string;
   image: string;
 }
 
-interface Props {videos: Video[];}
+interface Props {videos: singleVideo[];}
 
 function SideBar({ videos } : Props) {
   function handleClick() {

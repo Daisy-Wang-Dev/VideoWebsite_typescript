@@ -1,6 +1,5 @@
 import "./Header.scss";
 import { Link } from "react-router-dom";
-// import BrainflixLogo from "../../assets/logo/BrainFlix-logo.svg";
 import VidPortLogo from "../../assets/logo/vidport-low-resolution-color-logo.png";
 import Avatar from "../../assets/images/gary-bendig-6GMq7AGxNbE-unsplash.jpg";
 import SearchLogo from "../../assets/icons/search.svg";

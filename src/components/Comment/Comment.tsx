@@ -1,6 +1,11 @@
 import "./Comment.scss";
 
-function Comment({fullName, readDate, comment}) {
+interface CommentProps {
+    fullName: string;
+    readDate: string;
+    comment: string
+}
+function Comment({fullName, readDate, comment}: CommentProps) {
     return (
         <article className="active-comment">
             <div className="active-comment__img"></div>

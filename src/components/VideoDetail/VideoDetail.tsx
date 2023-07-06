@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ViewIcon from "../../assets/icons/views.svg";
 import LikesIcon from "../../assets/icons/likes.svg";
-import Comments from "../Comments/Comments";
+// import Comments from "../Comments/Comments";
 
 function VideoDetail({ activeVideoID }) {
   const [activeVideoDetails, setActiveVideoDetails] = useState(null);

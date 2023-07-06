@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
-import Video from "../../components/Video/Video";
+import Video from "../Video/Video";
 import "./SideBar.scss";
 
-function SideBar({ videos }) {
+interface Video {
+  id: string;
+  title: string;
+  channel: string;
+  image: string;
+}
+
+interface Props {videos: Video[];}
+
+function SideBar({ videos } : Props) {
   function handleClick() {
     window.scrollTo(0, 0);
   }

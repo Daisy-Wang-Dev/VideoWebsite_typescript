@@ -5,10 +5,16 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const Home = () => {
-  const [videos, setVideos] = useState(null);
-  const [activeVideoID, setActiveVideoID] = useState("");
-  const { videoID } = useParams();
+interface Video {
+  id: string;
+  title: string;
+  channel: string;
+  image: string;
+}
+const Home: React.FC = () => {
+  const [videos, setVideos] = useState<Video[] | null>(null);
+  const [activeVideoID, setActiveVideoID] = useState<string>("");
+  const { videoID } = useParams<{ videoID?: string }>();
 
   const getVideos = async () => {
     try {
@@ -31,7 +37,9 @@ const Home = () => {
         setActiveVideoID(videos[0].id);
       } else {
         const displayedVideo = videos.find((video) => video.id === videoID);
-        setActiveVideoID(displayedVideo.id);
+        if (displayedVideo) {
+          setActiveVideoID(displayedVideo.id);
+        }
       }
     }
   }, [videos, videoID]);
@@ -53,6 +61,6 @@ const Home = () => {
       </main>
     </>
   );
-}
+};
 
 export default Home;

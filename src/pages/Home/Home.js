@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-function Home() {
+const Home = () => {
   const [videos, setVideos] = useState(null);
   const [activeVideoID, setActiveVideoID] = useState("");
   const { videoID } = useParams();

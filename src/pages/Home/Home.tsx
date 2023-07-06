@@ -5,14 +5,14 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-interface Video {
+interface singleVideo {
   id: string;
   title: string;
   channel: string;
   image: string;
 }
 const Home: React.FC = () => {
-  const [videos, setVideos] = useState<Video[] | null>(null);
+  const [videos, setVideos] = useState<singleVideo[] | null>(null);
   const [activeVideoID, setActiveVideoID] = useState<string>("");
   const { videoID } = useParams<{ videoID?: string }>();
 

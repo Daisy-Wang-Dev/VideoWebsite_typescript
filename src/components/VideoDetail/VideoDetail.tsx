@@ -8,8 +8,29 @@ import Comments from "../Comments/Comments";
 interface VideoDetailProps {
   activeVideoID: string;
 }
+interface comment {
+  id: string;
+  name: string;
+  comment: string;
+  likes: number;
+  timestamp: number;
+}
+
+interface ActiveVideoDetails {
+ id: string;
+ title: string;
+ channel: string;
+ image: string;
+ description: string;
+ views: string;
+ likes: string;
+ video: string;
+ timestamp: number;
+ comments: comment[];
+}
+
 function VideoDetail({ activeVideoID } :VideoDetailProps ) {
-  const [activeVideoDetails, setActiveVideoDetails] = useState(null);
+  const [activeVideoDetails, setActiveVideoDetails] = useState<ActiveVideoDetails | null>(null);
 
   const getVideoDetails = async () => {
     try {

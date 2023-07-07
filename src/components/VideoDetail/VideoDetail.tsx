@@ -17,20 +17,21 @@ interface comment {
 }
 
 interface ActiveVideoDetails {
- id: string;
- title: string;
- channel: string;
- image: string;
- description: string;
- views: string;
- likes: string;
- video: string;
- timestamp: number;
- comments: comment[];
+  id: string;
+  title: string;
+  channel: string;
+  image: string;
+  description: string;
+  views: string;
+  likes: string;
+  video: string;
+  timestamp: number;
+  comments: comment[];
 }
 
-function VideoDetail({ activeVideoID } :VideoDetailProps ) {
-  const [activeVideoDetails, setActiveVideoDetails] = useState<ActiveVideoDetails | null>(null);
+function VideoDetail({ activeVideoID }: VideoDetailProps) {
+  const [activeVideoDetails, setActiveVideoDetails] =
+    useState<ActiveVideoDetails | null>(null);
 
   const getVideoDetails = async () => {
     try {

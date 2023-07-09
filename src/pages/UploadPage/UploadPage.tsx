@@ -15,10 +15,10 @@ function UploadPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const {title, description} = e.target as HTMLFormElement;
+    const {title, description} = e.target as unknown as { title: HTMLInputElement, description: HTMLInputElement };
     const newVideo = {
-      title: title,
-      description: description,
+      title: title.value,
+      description: description.value,
     };
 
     axios
@@ -34,6 +34,7 @@ function UploadPage() {
       .catch((error) => {
         console.log(error);
         setError(error.response.data);
+        
       });
   };
 
